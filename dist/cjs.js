@@ -579,6 +579,7 @@ function getDataDump(connectionOptions, options, tables, dumpToFile) {
             }
         }
         try {
+            yield executeSql(connection, 'SET NAMES utf8mb4');
             if (options.lockTables) {
                 // see: https://dev.mysql.com/doc/refman/5.7/en/replication-solutions-backups-read-only.html
                 yield executeSql(connection, 'FLUSH TABLES WITH READ LOCK');
