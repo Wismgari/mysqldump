@@ -101,6 +101,8 @@ async function getDataDump(
     }
 
     try {
+		await executeSql(connection, 'SET NAMES utf8mb4');
+
         if (options.lockTables) {
             // see: https://dev.mysql.com/doc/refman/5.7/en/replication-solutions-backups-read-only.html
             await executeSql(connection, 'FLUSH TABLES WITH READ LOCK');
