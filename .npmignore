@@ -1,4 +1,5 @@
 **/*
+!dist/cjs.js
 !dist/es.js
 !dist/umd.js
 !dist/mysqldump.d.ts
